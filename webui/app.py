@@ -17,6 +17,16 @@ app.static_folder = 'static'
 generate_lock = Lock()
 session: Session
 
+# CORS middleware
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = '*'
+    response.headers['Access-Control-Allow-Credentials'] = 'true'
+    return response
+
 # Render template
 
 @app.route("/")
@@ -126,6 +136,14 @@ def api_inputoutput():
     
     result = Response(session.store_input_output(user_input, bot_output), mimetype = 'application/json')
     return result
+
+@app.route("/api/latestoutput", methods=['GET'])
+def api_latestoutput():
+    bot_output = session.get_latest_output()
+    text_output = {
+        'text': bot_output
+    }
+    return jsonify(text_output)
 
 # Load the model
 

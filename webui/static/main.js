@@ -449,7 +449,7 @@ function saveParticipant(id, value)
 
 // Textbox
 
-function addTextboxEvents(ctb, onValueChange, multiline = true)
+function addTextboxEvents(ctb, onValueChange, multiline = false)
 {
     ctb.addEventListener("focus",  function() {
         textbox_initial = this.value;
@@ -464,16 +464,19 @@ function addTextboxEvents(ctb, onValueChange, multiline = true)
 
     ctb.addEventListener("keydown", function(event) {
         if (event.key === "Escape") {
+	    console.log("1")
             this.value = textbox_initial;
             this.blur();
             event.preventDefault();
         }
         if (event.key === "Enter" && !event.shiftKey) {
+            console.log("2")
             this.blur();
         }
         if (event.key == "Enter" && !multiline)
         {
             this.blur();
+	    console.log("3")
             event.preventDefault();
         }
     });
@@ -686,14 +689,6 @@ $(document).ready(function() {
     });
 });
 
-
-fetch("/api/inputoutput", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ user_input: userInput, bot_output,botOutput })
-});
 
 // Read stream
 

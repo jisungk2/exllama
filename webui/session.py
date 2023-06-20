@@ -684,3 +684,10 @@ class Session:
         self.history.append(newNode)
 
         self.save()
+
+    def get_latest_output(self):
+        current_node = self.history[len(self.history) - 1]
+        node_dic = current_node.get_dict()
+        text = node_dic["text"]
+        return text
+
