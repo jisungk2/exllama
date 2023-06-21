@@ -1,0 +1,3 @@
+[submodule "WizardLM-30B-Uncensored-GPTQ"]
+	path = WizardLM-30B-Uncensored-GPTQ
+	url = https://huggingface.co/TheBloke/WizardLM-30B-Uncensored-GPTQ

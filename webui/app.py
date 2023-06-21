@@ -137,14 +137,6 @@ def api_inputoutput():
     result = Response(session.store_input_output(user_input, bot_output), mimetype = 'application/json')
     return result
 
-@app.route("/api/latestoutput", methods=['GET'])
-def api_latestoutput():
-    bot_output = session.get_latest_output()
-    text_output = {
-        'text': bot_output
-    }
-    return jsonify(text_output)
-
 # Load the model
 
 parser = argparse.ArgumentParser(description="Simple web-based chatbot for ExLlama")
