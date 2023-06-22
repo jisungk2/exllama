@@ -161,7 +161,7 @@ class Session:
         self.first_history_idx = 0
         self.first_korean_idx = 0
 
-        self.language = "english"
+        self.language = "korean"
 
         # Saved state
 
