@@ -130,14 +130,6 @@ def api_userinput():
     with generate_lock:
         response_list = list(session.respond_multi(user_input, original_input))
 
-    # "text" 부분을 추출하여 리스트로 저장
-    # text_list = [json.loads(response)["text"] for response in response_list if "text" in json.loads(response)]
-
-    # 텍스트 리스트를 하나의 문자열로 결합
-    # response_text = ''.join(text_list)
-    # response_text = GoogleTranslator(source='en', target='ko').translate(response_text)
-    # result = {"response": response_text}
-
     return json.dumps({"result": "ok"}) + "\n"
 
 # manually stores input from the user and ouput from bot in the history of the current session

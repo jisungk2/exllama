@@ -1,0 +1,83 @@
+ERROR:app:Exception on /api/set_gen_settings [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/workspace/exllama/webui/app.py", line 97, in api_set_gen_settings
+    session.api_set_gen_settings(data)
+  File "/workspace/exllama/webui/session.py", line 391, in api_set_gen_settings
+    generator.settings.typical = data["typical"]
+KeyError: 'typical'
+ERROR:app:Exception on /api/set_gen_settings [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/workspace/exllama/webui/app.py", line 97, in api_set_gen_settings
+    session.api_set_gen_settings(data)
+  File "/workspace/exllama/webui/session.py", line 391, in api_set_gen_settings
+    generator.settings.typical = data["typical"]
+KeyError: 'typical'
+ -- Tokenizer: ../WizardLM-30B-Uncensored-GPTQ/tokenizer.model
+ -- Model config: ../WizardLM-30B-Uncensored-GPTQ/config.json
+ -- Model: ../WizardLM-30B-Uncensored-GPTQ/WizardLM-30B-Uncensored-GPTQ-4bit.act-order.safetensors
+ -- Sequence length: 2048
+ -- Tuning:
+ -- --matmul_recons_thd: 8
+ -- --fused_mlp_thd: 2
+ -- --sdp_thd: 8
+ -- Options: []
+ -- Loading model...
+ -- Loading tokenizer...
+ -- Groupsize (inferred): None
+ -- Act-order (inferred): no
+Traceback (most recent call last):
+  File "/workspace/exllama/webui/app.py", line 185, in <module>
+    session = get_initial_session()
+  File "/workspace/exllama/webui/session.py", line 52, in get_initial_session
+    return load_session(last_session)
+  File "/workspace/exllama/webui/session.py", line 58, in load_session
+    session = Session(filename, load = True)
+  File "/workspace/exllama/webui/session.py", line 158, in __init__
+    if cache is None: cache = ExLlamaCache(model)
+  File "/workspace/exllama/model.py", line 507, in __init__
+    p_value_states = torch.zeros(self.batch_size, self.config.num_attention_heads, self.max_seq_len, self.config.head_dim, dtype = torch.float16, device = self.model.config.device_map.layers[i])
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 26.00 MiB (GPU 0; 23.65 GiB total capacity; 16.79 GiB already allocated; 4.56 MiB free; 17.00 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ -- Tokenizer: ../WizardLM-7B-V1.0-Uncensored-GPTQ/tokenizer.model
+ -- Model config: ../WizardLM-7B-V1.0-Uncensored-GPTQ/config.json
+ -- Model: ../WizardLM-7B-V1.0-Uncensored-GPTQ/wizardlm-7b-v1.0-uncensored-GPTQ-4bit-128g.no-act.order.safetensors
+ -- Sequence length: 2048
+ -- Tuning:
+ -- --matmul_recons_thd: 8
+ -- --fused_mlp_thd: 2
+ -- --sdp_thd: 8
+ -- Options: []
+ -- Loading model...
+ -- Loading tokenizer...
+ -- Groupsize (inferred): 128
+ -- Act-order (inferred): no
+ -- Sessions stored in: /workspace/exllama_sessions
+Traceback (most recent call last):
+  File "/workspace/exllama/webui/app.py", line 197, in <module>
+    serve(app, host = host, port = port)
+  File "/usr/local/lib/python3.10/dist-packages/waitress/__init__.py", line 13, in serve
+    server = _server(app, **kw)
+  File "/usr/local/lib/python3.10/dist-packages/waitress/server.py", line 78, in create_server
+    last_serv = TcpWSGIServer(
+  File "/usr/local/lib/python3.10/dist-packages/waitress/server.py", line 244, in __init__
+    self.bind_server_socket()
+  File "/usr/local/lib/python3.10/dist-packages/waitress/server.py", line 361, in bind_server_socket
+    self.bind(sockaddr)
+  File "/usr/local/lib/python3.10/dist-packages/waitress/wasyncore.py", line 396, in bind
+    return self.socket.bind(addr)
+OSError: [Errno 98] Address already in use
