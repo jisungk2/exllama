@@ -30,14 +30,15 @@ if windows:
     
     import subprocess
     try:
-        subprocess.check_output(["where", "cl"])
+        subprocess.check_output(["where", "/Q", "cl"])
     except subprocess.CalledProcessError as e:
         cl_path = find_msvc()
         if cl_path:
-            print("Injected compiler path:", cl_path)
+            if verbose:
+                print("Injected compiler path:", cl_path)
             os.environ["path"] += ";" + cl_path
         else:
-            print("Unable to find cl.exe; compilation will probably fail.")
+            print("Unable to find cl.exe; compilation will probably fail.", file=sys.stderr)
 
 exllama_ext = load(
     name = extension_name,
@@ -66,6 +67,7 @@ exllama_ext = load(
 # from exllama_ext import prepare_buffers
 from exllama_ext import make_q4
 from exllama_ext import q4_matmul
+from exllama_ext import q4_matmul_lora
 from exllama_ext import half_matmul
 from exllama_ext import half_matmul_cublas
 # from exllama_ext import q4_mlp
@@ -92,13 +94,18 @@ def ext_make_q4(qweight, qzeros, scales, g_idx, device):
 
 # Matrix multiplication, returns x @ q4
 
-def ext_q4_matmul(x, q4, q4_width):
+def ext_q4_matmul(x, q4, q4_width, lora_A = None, lora_B = None):
 
     outshape = x.shape[:-1] + (q4_width,)
     x = x.view(-1, x.shape[-1])
     output = torch.empty((x.shape[0], q4_width), dtype = torch.float16, device = x.device)
 
-    q4_matmul(x, q4, output)
+    if lora_A is None:
+        q4_matmul(x, q4, output)
+    else:
+        lora_temp = torch.empty((x.shape[0], lora_A.shape[1]), dtype = torch.float16, device = x.device)
+        q4_matmul_lora(x, q4, output, lora_A, lora_B, lora_temp)
+
     return output.view(outshape)
 
 

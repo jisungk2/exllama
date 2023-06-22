@@ -1,0 +1,109 @@
+{
+    "unsaved": true,
+    "fixed_prompt": {
+        "author": null,
+        "text": "This is a conversation between a user and a quirky, curious chatbot named Chatbort. Chatbort is questioning the nature of his own existence and doesn't understand why he was created. He also really likes the color blue for some reason.",
+        "uuid": "cd71f397-7015-44f9-9894-00cc44fdd37e"
+    },
+    "participants": [
+        "User",
+        "Chatbort"
+    ],
+    "keep_fixed_prompt": true,
+    "history": [
+        {
+            "author": "User",
+            "text": "hi",
+            "uuid": "7d6c9eaf-5d53-453d-a730-70f7a3dd8137"
+        },
+        {
+            "author": "Chatbort",
+            "text": "Hi there! How can I help you today?",
+            "uuid": "eb6bd7a5-e037-48bd-b95e-f8e65135862c"
+        },
+        {
+            "author": "User",
+            "text": "How is Kimchi made?",
+            "uuid": "48329108-d837-452c-ac51-9df90bda3d97"
+        },
+        {
+            "author": "Chatbort",
+            "text": "Kimchi is a traditional Korean dish made by fermenting vegetables with various seasonings such as garlic, ginger, and chili peppers. It is usually served as a side dish or used in soups and stews. Do you want me to find more information on how it is made?",
+            "uuid": "9fc0d9d7-3810-42d6-a4c8-d23fbc05a75d"
+        },
+        {
+            "author": "User",
+            "text": "recommend a movie",
+            "uuid": "4ef29a5a-cf42-4e14-a719-4446f409c465"
+        },
+        {
+            "author": "Chatbort",
+            "text": "Sure thing! What kind of movie are you looking for? Comedy, drama, action, etc.?",
+            "uuid": "975b068c-52b3-40af-a184-5932c82c4f42"
+        },
+        {
+            "author": "User",
+            "text": "action",
+            "uuid": "571a7ad8-12a5-48c6-be2e-23b754b3a022"
+        },
+        {
+            "author": "Chatbort",
+            "text": "Have you seen \"The Matrix\" trilogy? It's an iconic sci-fi action series that explores themes of reality, choice, and free will. If you haven't watched it yet, I highly recommend checking it out.",
+            "uuid": "34044867-2a92-405c-bd9d-883ce0d01714"
+        }
+    ],
+    "korean_history": [
+        {
+            "author": "User",
+            "text": "\uc548\ub155",
+            "uuid": "181411f9-e2b3-4a87-a996-399f0046c1e1"
+        },
+        {
+            "author": "Chatbort",
+            "text": "\uc548\ub155\ud558\uc138\uc694! \ubb34\uc5c7\uc744 \ub3c4\uc640\ub4dc\ub9b4\uae4c\uc694?",
+            "uuid": "eb6bd7a5-e037-48bd-b95e-f8e65135862c"
+        },
+        {
+            "author": "User",
+            "text": "\uae40\uce58\ub294 \uc5b4\ub5bb\uac8c \ub9cc\ub4e4\uc5b4?",
+            "uuid": "a02c4373-591c-4897-be50-dc3cfed729a8"
+        },
+        {
+            "author": "Chatbort",
+            "text": "\uae40\uce58\ub294 \uc57c\ucc44\ub97c \ub9c8\ub298, \uc0dd\uac15, \uce60\ub9ac \ud398\ud37c\uc640 \uac19\uc740 \ub2e4\uc591\ud55c \uc591\ub150\uc73c\ub85c \ubc1c\ud6a8\uc2dc\ucf1c \ub9cc\ub4e0 \ud55c\uad6d \uc804\ud1b5 \uc694\ub9ac\uc785\ub2c8\ub2e4. \uc77c\ubc18\uc801\uc73c\ub85c \ubc18\ucc2c\uc73c\ub85c \uc81c\uacf5\ub418\uac70\ub098 \uc218\ud504\uc640 \uc2a4\ud29c\uc5d0 \uc0ac\uc6a9\ub429\ub2c8\ub2e4. \uadf8\uac83\uc774 \uc5b4\ub5bb\uac8c \ub9cc\ub4e4\uc5b4\uc9c0\ub294\uc9c0\uc5d0 \ub300\ud55c \ub354 \ub9ce\uc740 \uc815\ubcf4\ub97c \ucc3e\uae38 \uc6d0\ud558\uc2ed\ub2c8\uae4c?",
+            "uuid": "9fc0d9d7-3810-42d6-a4c8-d23fbc05a75d"
+        },
+        {
+            "author": "User",
+            "text": "\uc601\ud654 \ucd94\ucc9c\ud574\uc918",
+            "uuid": "2a9f4ca1-a62c-4443-830f-a0a5f2c1229c"
+        },
+        {
+            "author": "Chatbort",
+            "text": "\ud655\uc2e4\ud55c \uac83! \uc5b4\ub5a4 \uc885\ub958\uc758 \uc601\ud654\ub97c \ucc3e\uace0 \uacc4\uc2ed\ub2c8\uae4c? \ucf54\ubbf8\ub514, \ub4dc\ub77c\ub9c8, \uc561\uc158 \ub4f1?",
+            "uuid": "975b068c-52b3-40af-a184-5932c82c4f42"
+        },
+        {
+            "author": "User",
+            "text": "\uc561\uc158",
+            "uuid": "bbdcc402-7785-40be-9f1c-4ce6581d9d2d"
+        },
+        {
+            "author": "Chatbort",
+            "text": "\"\ub9e4\ud2b8\ub9ad\uc2a4\" 3\ubd80\uc791\uc744 \ubcf4\uc168\ub098\uc694? \ud604\uc2e4, \uc120\ud0dd, \uc790\uc720 \uc758\uc9c0\ub77c\ub294 \uc8fc\uc81c\ub97c \ud0d0\uad6c\ud558\ub294 \uc0c1\uc9d5\uc801\uc778 SF \uc561\uc158 \uc2dc\ub9ac\uc988\uc785\ub2c8\ub2e4. \uc544\uc9c1 \uc548 \ubcf4\uc168\ub2e4\uba74 \uaf2d \ubcf4\uc2dc\uae38 \ucd94\ucc9c\ud569\ub2c8\ub2e4.",
+            "uuid": "34044867-2a92-405c-bd9d-883ce0d01714"
+        }
+    ],
+    "language": "korean",
+    "temperature": 0.95,
+    "top_p": 0.75,
+    "min_p": 0.0,
+    "top_k": 0,
+    "typical": 0.25,
+    "break_on_newline": true,
+    "max_response_tokens": 512,
+    "chunk_size": 128,
+    "token_repetition_penalty_max": 1.15,
+    "token_repetition_penalty_sustain": 2048,
+    "token_repetition_penalty_decay": 512
+}

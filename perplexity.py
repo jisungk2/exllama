@@ -32,12 +32,12 @@ class Perplexity:
             self.cache.current_seq_len = 0
 
 
-    def _next_logits(self, input_ids, last_id_only=True):
+    def _next_logits(self, input_ids, apply_lora, last_id_only=True):
         n_logits = None
         a = 0
         while a < input_ids.shape[-1]:
             b = min(input_ids.shape[-1], a + 2048)
-            n_logits = self.model.forward(input_ids[:, a:b], self.cache, last_id_only)
+            n_logits = self.model.forward(input_ids[:, a:b], self.cache, last_id_only, lora = apply_lora)
             a = b
 
         return n_logits
@@ -48,7 +48,7 @@ class Perplexity:
 
 
     # This loads *and* tokenizes into chunks
-    def load(self, dataset_path, context=2048, overlap=0):
+    def load(self, dataset_path, context=2048, overlap=0, minlength = 0):
         file_extension = os.path.splitext(dataset_path)[1]
 
         # JSON format
@@ -56,9 +56,7 @@ class Perplexity:
             with open(dataset_path) as f:
                 for line in f:
                     example = json.loads(line)["text"]
-                    # FIX: this was the default behavior but may lead to unexpected results for someone using this blindly...
-                    # Consider a min-length option?
-                    if len(example) > 50: 
+                    if len(example) > minlength:
                         chunk = self._tokenize(example)
                         chunk = chunk[:, :context + 1]
                         self.dataset_chunks.append(chunk)
@@ -81,11 +79,11 @@ class Perplexity:
                 self.dataset_chunks.append(chunk)
 
 
-    def test(self, chunk_limit=sys.maxsize, tag=""):
+    def test(self, chunk_limit=sys.maxsize, lora = None, tag="", ppl_token = False):
         if not self.dataset_chunks:
             sys.exit(" xx ERROR: Empty dataset!")
 
-        print(f" -- Testing {min(len(self.dataset_chunks), chunk_limit)} chunks ", end="")
+        print(f" -- Testing {min(len(self.dataset_chunks), chunk_limit)} chunks", end="")
         sys.stdout.flush()
 
         logprob_sum = 0.0
@@ -100,7 +98,14 @@ class Perplexity:
             input_ids = chunk[:, :-1]
             target_ids = chunk[:, 1:]
 
-            logits = self._next_logits(input_ids, last_id_only=False)
+            if ppl_token:
+                logits_s = []
+                for i in range(input_ids.shape[-1]):
+                    logits_t = self._next_logits(input_ids[:, i : i + 1], lora, last_id_only = False)
+                    logits_s.append(logits_t)
+                logits = torch.cat(logits_s, dim = 1)
+            else:
+                logits = self._next_logits(input_ids, lora, last_id_only = False)
 
             log_probs = F.log_softmax(logits, dim=-1)
             token_log_probs = log_probs.gather(-1, target_ids.unsqueeze(-1)).squeeze(-1)
