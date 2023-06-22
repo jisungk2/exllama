@@ -11,6 +11,7 @@ from session import prepare_sessions, get_initial_session, Session, load_session
 import argparse
 from tokenizer import ExLlamaTokenizer
 from model import ExLlama, ExLlamaConfig
+from deep_translator import GoogleTranslator
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -121,11 +122,21 @@ def api_set_participants():
 @app.route("/api/userinput", methods=['POST'])
 def api_userinput():
     data = request.get_json()
-    user_input = data["user_input"]
+    original_input = data["user_input"]
+    user_input = GoogleTranslator(source='ko', target='en').translate(original_input)
 
     with generate_lock:
-        result = Response(stream_with_context(session.respond_multi(user_input)), mimetype = 'application/json')
-        return result
+        response_list = list(session.respond_multi(user_input, original_input))
+
+    # "text" 부분을 추출하여 리스트로 저장
+    text_list = [json.loads(response)["text"] for response in response_list if "text" in json.loads(response)]
+
+    # 텍스트 리스트를 하나의 문자열로 결합
+    response_text = ''.join(text_list)
+    response_text = GoogleTranslator(source='en', target='ko').translate(response_text)
+    result = {"response": response_text}
+
+    return result
 
 # manually stores input from the user and ouput from bot in the history of the current session
 @app.route("/api/inputoutput", methods=['POST'])
@@ -135,6 +146,16 @@ def api_inputoutput():
     bot_output = data["bot_output"]
     
     result = Response(session.store_input_output(user_input, bot_output), mimetype = 'application/json')
+    return result
+
+# Sets output language to the one corresponding to the post request
+@app.route("/api/language", methods=['POST'])
+def api_output_language():
+    data = request.get_json()
+    language = data["language"]
+    
+    session.set_output_language(language)
+    result = {"output_language": language}
     return result
 
 # Load the model

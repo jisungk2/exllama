@@ -6,14 +6,14 @@ import torch
 import os
 import json
 import uuid
+from deep_translator import GoogleTranslator
 
 default_fixed_prompt = \
     """This is a conversation between a user and a quirky, curious chatbot named Chatbort. Chatbort is questioning """ + \
     """the nature of his own existence and doesn't understand why he was created. He also really likes the color blue """ + \
     """for some reason."""
 
-
-# Create sessions folder in home dir
+# Create sessions folder in workspace dir
 
 model: ExLlama
 tokenizer: ExLlamaTokenizer
@@ -22,7 +22,7 @@ generator: ExLlamaGenerator
 
 def _sessions_dir(filename = None):
 
-    home_dir = os.path.expanduser("~")
+    home_dir = os.path.expanduser("/workspace")
     path = os.path.join(home_dir, "exllama_sessions")
     if filename is not None: path = os.path.join(path, filename)
     return path
@@ -131,11 +131,14 @@ class Session:
     fixed_prompt: Node
     keep_fixed_prompt: bool
     history: list[Node]
+    korean_history: list[Node]
     break_on_newline: bool
+    language: str
 
     # Running state
 
     first_history_idx: int  # Index of the first history item currently used in the context
+    first_korean_idx: int
 
     def __init__(self, filename, load):
         global model, cache, tokenizer, generator
@@ -156,6 +159,9 @@ class Session:
         else: generator.reset()
 
         self.first_history_idx = 0
+        self.first_korean_idx = 0
+
+        self.language = "english"
 
         # Saved state
 
@@ -165,8 +171,12 @@ class Session:
         self.participants = saved.get("participants", ["User", "Chatbort"])
 
         self.history = []
+        self.korean_history=[]
         loadhistory = saved.get("history", [])
         for jnode in loadhistory: self.history.append(Node(jnode))
+
+        loadkorean = saved.get("korean_history", [])
+        for jnode in loadkorean: self.korean_history.append(Node(jnode))
 
         generator.settings.temperature = saved.get("temperature", 0.95)
         generator.settings.top_p = saved.get("top_p", 0.65)
@@ -193,6 +203,8 @@ class Session:
                     "participants": self.participants,
                     "keep_fixed_prompt": self.keep_fixed_prompt,
                     "history": [node.get_dict() for node in self.history],
+                    "korean_history": [node.get_dict() for node in self.korean_history],
+                    "language": self.language,
                     "temperature": generator.settings.temperature,
                     "top_p": generator.settings.top_p,
                     "min_p": generator.settings.min_p,
@@ -269,7 +281,11 @@ class Session:
         filename = os.path.basename(self.filename)
         name = os.path.splitext(filename)[0]
 
-        historyjson = [node.get_dict() for node in self.history]
+        if self.language == "english":
+            historyjson = [node.get_dict() for node in self.history]
+        else:
+            historyjson = [node.get_dict() for node in self.korean_history]
+        
 
         for jnode in historyjson:
             author = jnode["author"]
@@ -301,6 +317,7 @@ class Session:
         dic["model_info"] = model_str.strip()
 
         json_object = json.dumps(dic, indent = 4)
+
         return json_object + "\n"
 
 
@@ -528,10 +545,14 @@ class Session:
                        node_id=new_block_uuid)  # TODO: Reuse generated tokens instead of reencoding, if it matters?
         self.history.append(newNode)
 
+        response_text = GoogleTranslator(source='en', target='ko').translate(res_line)
+        newNode = Node(response_text, author, node_id=new_block_uuid)
+        self.korean_history.append(newNode)
+
         total_tokens[0] += num_res_tokens
 
 
-    def respond_multi(self, user_input):
+    def respond_multi(self, user_input, original_input):
         global model, tokenizer, cache, generator
 
         packet = {"cmd": "begin_stream"}
@@ -565,6 +586,9 @@ class Session:
             if len(self.participants) > 0: author = self.participants[0]
             newNode = Node(user_input, author)
             self.history.append(newNode)
+
+            newNode = Node(original_input, author)
+            self.korean_history.append(newNode)
 
             self.save()
 
@@ -684,4 +708,10 @@ class Session:
         self.history.append(newNode)
 
         self.save()
+
+    def set_output_language(self, output_language):
+        self.language = output_language
+        print(self.language)
+
+
 

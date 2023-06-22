@@ -10,6 +10,35 @@ var chat_colors = [ "#343434",
 
 var textbox_initial = "";
 
+
+$(document).ready(function() {
+    $("#english-button").on('click', function() {
+
+        fetch("/api/language", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ language: "english" })
+        });
+    });
+});
+
+$(document).ready(function() {
+    $("#korean-button").on('click', function() {
+
+        fetch("/api/language", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ language: "korean" })
+        });
+
+    });
+});
+
+
 createGenSettings();
 populate();
 
@@ -929,3 +958,4 @@ function checkScroll() {
 
     updateGradientPosition();
 }
+
