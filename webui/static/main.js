@@ -11,34 +11,6 @@ var chat_colors = [ "#343434",
 var textbox_initial = "";
 
 
-$(document).ready(function() {
-    $("#english-button").on('click', function() {
-
-        fetch("/api/language", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ language: "english" })
-        });
-    });
-});
-
-$(document).ready(function() {
-    $("#korean-button").on('click', function() {
-
-        fetch("/api/language", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ language: "korean" })
-        });
-
-    });
-});
-
-
 createGenSettings();
 populate();
 
@@ -983,3 +955,35 @@ function checkScroll() {
     updateGradientPosition();
 }
 
+function switchToEnglish() {
+    fetch("/api/language", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ language: "english" })
+    });
+}
+
+function switchToKorean() {
+    fetch("/api/language", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ language: "korean" })
+    });
+}
+
+// Updates the displayed language on the user interface based on the dropdown menu
+
+document.getElementById("dropdown").addEventListener("change", function() {
+    var selectedValue = this.value;
+    console.log("Selected item: " + selectedValue);
+  
+    if (selectedValue === "english") {
+        switchToEnglish();
+    } else {
+        switchToKorean();
+    }
+});

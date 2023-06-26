@@ -81,3 +81,53 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.10/dist-packages/waitress/wasyncore.py", line 396, in bind
     return self.socket.bind(addr)
 OSError: [Errno 98] Address already in use
+ -- Tokenizer: ../WizardLM-30B-Uncensored-GPTQ/tokenizer.model
+ -- Model config: ../WizardLM-30B-Uncensored-GPTQ/config.json
+ -- Model: ../WizardLM-30B-Uncensored-GPTQ/WizardLM-30B-Uncensored-GPTQ-4bit.act-order.safetensors
+ -- Sequence length: 2048
+ -- Tuning:
+ -- --matmul_recons_thd: 8
+ -- --fused_mlp_thd: 2
+ -- --sdp_thd: 8
+ -- Options: []
+ -- Loading model...
+Traceback (most recent call last):
+  File "/workspace/exllama/webui/app.py", line 175, in <module>
+    model = ExLlama(config)
+  File "/workspace/exllama/model.py", line 718, in __init__
+    tensor = tensor.to(device, non_blocking = True)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 22.00 MiB (GPU 0; 23.65 GiB total capacity; 2.65 GiB already allocated; 22.56 MiB free; 2.68 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ERROR:app:Exception on /api/set_session [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/workspace/exllama/webui/app.py", line 110, in api_set_session
+    session = load_session(load_session_name, append_path = True)
+  File "/workspace/exllama/webui/session.py", line 58, in load_session
+    session = Session(filename, load = True)
+  File "/workspace/exllama/webui/session.py", line 151, in __init__
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/exllama_sessions/나이키 신발가게 점원과의 대화.json'
+ERROR:app:Exception on /api/set_session [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/workspace/exllama/webui/app.py", line 110, in api_set_session
+    session = load_session(load_session_name, append_path = True)
+  File "/workspace/exllama/webui/session.py", line 58, in load_session
+    session = Session(filename, load = True)
+  File "/workspace/exllama/webui/session.py", line 151, in __init__
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/exllama_sessions/세렝게티 봇과의 대화.json'

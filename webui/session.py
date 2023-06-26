@@ -331,12 +331,12 @@ class Session:
 
         block_id = data["uuid"]
         idx = -1
-        for i in range(len(self.history)):
-            if self.history[i].uuid == block_id:
+        for i in range(len(self.korean_history)):
+            if self.korean_history[i].uuid == block_id:
                 idx = i
         if idx == -1: return
 
-        self.history.pop(idx)
+        self.korean_history.pop(idx)
         self.first_history_idx = 0
         self.save()
 
@@ -726,17 +726,41 @@ class Session:
     def store_input_output(self, user_input, bot_output):
         author = self.participants[0]
         newNode = Node(user_input, author)
+        self.korean_history.append(newNode)
+
+        user_input = GoogleTranslator(source='ko', target='en').translate(user_input)
+        newNode = Node(user_input, author)
         self.history.append(newNode)
 
-        new_block_uuid = str(uuid.uuid4())
-        newNode = Node(bot_output, "Chatbort", node_id=new_block_uuid)
-        self.history.append(newNode)
+        author = self.participants[1]
+        newNode = Node(bot_output, author)
+        self.korean_history.append(newNode)
+
+        bot_output = GoogleTranslator(source='ko', target='en').translate(bot_output)
+        newNode = Node(bot_output, author)
+        self.history.append(newNode)        
+
+        # new_block_uuid = str(uuid.uuid4())
+        # newNode = Node(bot_output, "Chatbort", node_id=new_block_uuid)
+        # self.korean_history.append(newNode)
 
         self.save()
 
+        # author = None
+        # if "author" in data:
+        #     author = data["author"]
+        # else:
+        #     if len(self.participants) > 0:
+        #         author = self.participants[0]
+
+        # text = data["text"].strip()
+
+        # newNode = Node(text, author)
+        # self.history.append(newNode)
+        # self.save()
+
     def set_output_language(self, output_language):
         self.language = output_language
-        print(self.language)
 
 
 

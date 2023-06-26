@@ -151,6 +151,7 @@ def api_output_language():
     session.set_output_language(language)
     result = {"output_language": language}
     return result
+
 @app.route("/api/append_block", methods=['POST'])
 def api_append_block():
     data = request.get_json()
