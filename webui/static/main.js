@@ -12,7 +12,9 @@ var textbox_initial = "";
 
 
 createGenSettings();
-populate();
+populate_sessions();
+populate_generator();
+populate_chat();
 
 var currentNode = null;
 
@@ -206,8 +208,8 @@ function createGenSettings() {
 
 // Populate view
 
-function populate() {
-    fetch("/api/populate")
+function populate_sessions() {
+    fetch("/api/populate_sessions")
         .then(response => response.json())
         .then(json => {
 
@@ -252,6 +254,86 @@ function populate() {
             newDiv.addEventListener('click', function() { setSession("."); });
             document.getElementById('sessions-column').appendChild(newDiv);
 
+            // // Model info
+
+            // let tf_model_info = document.getElementById("tf_model_info")
+            // tf_model_info.value = data.model_info;
+
+            // // Fixed prompt
+
+            // let tf_fixed_prompt = document.getElementById("tf_fixed_prompt")
+            // tf_fixed_prompt.value = data.fixed_prompt;
+            // addTextboxEvents(tf_fixed_prompt, sendFixedPromptSettings);
+
+            // let cb_keep_fixed_prompt = document.querySelector("#cb_keep_fixed_prompt input")
+            // cb_keep_fixed_prompt.checked = data.keep_fixed_prompt;
+            // cb_keep_fixed_prompt.addEventListener('change', sendFixedPromptSettings);
+
+            // // Generator settings
+
+            // setSlider("sl_temperature", data.temperature);
+            // setSlider("sl_topp", data.top_p);
+            // setSlider("sl_minp", data.min_p);
+            // setSlider("sl_topk", data.top_k);
+            // setSlider("sl_typical", data.typical);
+
+            // // Stop conditions
+
+            // setSlider("sl_maxtokens", data.max_response_tokens);
+            // setSlider("sl_chunksize", data.chunk_size);
+
+            // let cb_gen_endnewline = document.querySelector("#cb_gen_endnewline input")
+            // cb_gen_endnewline.checked = data.break_on_newline;
+
+            // // Repetition penalty
+
+            // setSlider("sl_repp_penalty", data.token_repetition_penalty_max);
+            // setSlider("sl_repp_sustain", data.token_repetition_penalty_sustain);
+            // setSlider("sl_repp_decay", data.token_repetition_penalty_decay);
+
+            // // Participants
+
+            // participants = data.participants;
+            // updateParticipants();
+
+            // // Chat data
+
+            // let history = data.history;
+            // // console.log(history);
+
+            // for (let i = 0; i < history.length; i++) {
+
+            //     let header = null;
+            //     if (history[i].hasOwnProperty("author")) header = history[i].author;
+            //     text = history[i].text;
+            //     let idx = 0;
+            //     if (history[i].hasOwnProperty("author_idx")) idx = history[i].author_idx;
+            //     let uuid = history[i].uuid;
+
+            //     newChatBlock(header, text, idx, uuid);
+            // }
+
+            // // Begin
+
+            // scrollToBottom();
+            // checkScroll();
+            // $("#chatbox").on('scroll', checkScroll);
+            // $("#user-input").focus();
+
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+}
+
+function populate_generator() {
+    fetch("/api/populate_generator")
+        .then(response => response.json())
+        .then(json => {
+
+            //console.log(json)
+            var data = json;
+
             // Model info
 
             let tf_model_info = document.getElementById("tf_model_info")
@@ -293,6 +375,20 @@ function populate() {
 
             participants = data.participants;
             updateParticipants();
+
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+}
+
+function populate_chat() {
+    fetch("/api/populate_chat")
+        .then(response => response.json())
+        .then(json => {
+
+            //console.log(json)
+            var data = json;
 
             // Chat data
 

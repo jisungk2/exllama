@@ -38,10 +38,20 @@ def home():
 
 # Get existing sessions
 
-@app.route("/api/populate")
+@app.route("/api/populate_sessions")
 def api_populate():
     global session
-    return session.api_populate()
+    return session.api_populate_sessions()
+
+@app.route("/api/populate_generator")
+def api_populate_generator():
+    global session
+    return session.api_populate_generator()
+
+@app.route("/api/populate_chat")
+def api_populate_chat():
+    global session
+    return session.api_populate_chat()
 
 # Edit block
 
