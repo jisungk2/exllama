@@ -286,42 +286,8 @@ class Session:
         filename = os.path.basename(self.filename)
         name = os.path.splitext(filename)[0]
 
-        # if self.language == "english":
-        #     historyjson = [node.get_dict() for node in self.history]
-        # else:
-        #     historyjson = [node.get_dict() for node in self.korean_history]
-        
-
-        # for jnode in historyjson:
-        #     author = jnode["author"]
-        #     if author is not None and author in self.participants:
-        #         jnode["author_idx"] = self.participants.index(author)
-
         dic = {"sessions": names,
-                "current_session": name,
-                # "fixed_prompt": self.fixed_prompt.text,
-                # "keep_fixed_prompt": self.keep_fixed_prompt,
-                # "participants": self.participants,
-                # "history": historyjson,
-                # "temperature": generator.settings.temperature,
-                # "top_p": generator.settings.top_p,
-                # "min_p": generator.settings.min_p,
-                # "top_k": generator.settings.top_k,
-                # "typical": generator.settings.typical,
-                # "break_on_newline": self.break_on_newline,
-                # "max_response_tokens": self.max_response_tokens,
-                # "chunk_size": self.chunk_size,
-                # "token_repetition_penalty_max": generator.settings.token_repetition_penalty_max,
-                # "token_repetition_penalty_sustain": generator.settings.token_repetition_penalty_sustain,
-                # "token_repetition_penalty_decay": generator.settings.token_repetition_penalty_decay
-                }
-
-        # Add model info
-
-        # model_str = os.path.splitext(os.path.basename(model.config.model_path))[0] + "\n"
-        # model_str += f"Sequence length: {model.config.max_seq_len}\n"
-
-        # dic["model_info"] = model_str.strip()
+                "current_session": name}
 
         json_object = json.dumps(dic, indent = 4)
 

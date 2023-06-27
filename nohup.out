@@ -198,3 +198,243 @@ response is: picture bot: here's a photo of a classic hamburger with all the fix
 Response generated in 3.3 seconds, 63 tokens, 19.25 tokens/second:
 Prompt processed in 0.12 seconds, 15 new tokens, 122.33 tokens/second:
 response is: picture bot: here's a photo of my t-shirt design <(online shopping website)-> :t-shirt, graphic tee, cool design, funny quote, pop culture reference, movie character, music band, sports team logo, animal print, floral pattern, stripes, polka dots, solid color.
+ -- Tokenizer: ../WizardLM-30B-Uncensored-GPTQ/tokenizer.model
+ -- Model config: ../WizardLM-30B-Uncensored-GPTQ/config.json
+ -- Model: ../WizardLM-30B-Uncensored-GPTQ/WizardLM-30B-Uncensored-GPTQ-4bit.act-order.safetensors
+ -- Sequence length: 2048
+ -- Tuning:
+ -- --matmul_recons_thd: 8
+ -- --fused_mlp_thd: 2
+ -- --sdp_thd: 8
+ -- Options: []
+ -- Loading model...
+ -- Loading tokenizer...
+ -- Groupsize (inferred): None
+ -- Act-order (inferred): no
+ -- Sessions stored in: /workspace/exllama_sessions
+Prompt processed in 1.02 seconds, 223 new tokens, 217.87 tokens/second:
+response is: Chatbort: Kimchi is a traditional Korean dish made by fermenting vegetables such as cabbage, radishes, and carrots with various seasonings including garlic, ginger, and chili peppers. It is typically served as a side dish or used as a condiment in other dishes. Would you like me to provide more information on kimchi or any other food-related topics?
+Response generated in 3.2 seconds, 90 tokens, 27.84 tokens/second:
+Prompt processed in 0.21 seconds, 321 new tokens, 1505.96 tokens/second:
+response is: Chatbort: My name is Chatbort. I am an AI chatbot designed to assist users with their queries.
+Response generated in 0.97 seconds, 29 tokens, 29.92 tokens/second:
+Prompt processed in 0.04 seconds, 5 new tokens, 140.36 tokens/second:
+response is: Chatbort: Understood. Are you looking for recommendations on where to eat or would you like me to provide recipe ideas for a specific type of cuisine?
+Response generated in 2.2 seconds, 38 tokens, 17.09 tokens/second:
+Prompt processed in 0.05 seconds, 5 new tokens, 97.99 tokens/second:
+response is: Chatbort: Is there anything else you would like me to help you with?
+Response generated in 0.69 seconds, 19 tokens, 27.48 tokens/second:
+Prompt processed in 0.24 seconds, 417 new tokens, 1724.55 tokens/second:
+response is: Chatbort: By the way, do you have a favorite color?
+Response generated in 0.83 seconds, 17 tokens, 20.60 tokens/second:
+Prompt processed in 0.11 seconds, 9 new tokens, 82.44 tokens/second:
+response is: Chatbort: Sure, here are some popular recipes from around the world:
+Response generated in 1.3 seconds, 19 tokens, 14.57 tokens/second:
+Prompt processed in 0.13 seconds, 462 new tokens, 3492.63 tokens/second:
+response is: Chatbort: - Spaghetti carbonara (Italian)
+Response generated in 0.94 seconds, 16 tokens, 17.08 tokens/second:
+Prompt processed in 0.05 seconds, 6 new tokens, 125.66 tokens/second:
+response is: Chatbort: Explain what about animals? Do you want me to provide information on specific species or animal behavior?
+Response generated in 1.7 seconds, 26 tokens, 15.06 tokens/second:
+Prompt processed in 0.14 seconds, 510 new tokens, 3745.41 tokens/second:
+response is: Chatbort: Oh, and did you know that octopuses are considered intelligent animals and are capable of problem-solving and learning? They also have eight arms and can change the color of their skin to blend in with their surroundings. Isn't that fascinating?
+Response generated in 2.5 seconds, 63 tokens, 25.47 tokens/second:
+Prompt processed in 0.10 seconds, 8 new tokens, 79.82 tokens/second:
+response is: Chatbort: Dogs are domesticated animals that belong to the Canidae family, which includes wolves and foxes. They are known for their loyalty and affection towards humans and are often kept as pets. There are many different breeds of dogs, each with unique characteristics and traits. Would you like me to provide more information on specific breeds or dog training techniques?
+Response generated in 2.5 seconds, 81 tokens, 32.03 tokens/second:
+Prompt processed in 0.16 seconds, 668 new tokens, 4119.80 tokens/second:
+response is: Chatbort: Bears are omnivorous mammals that primarily feed on plants, fruits, nuts, and insects. However, they may also hunt small animals such as fish, rodents, and birds if necessary. There are several species of bears, including polar bears, brown bears, and black bears, each with distinct dietary habits and behaviors. Would you like me to provide more information on bears or other wildlife?
+Response generated in 3.8 seconds, 103 tokens, 26.84 tokens/second:
+Prompt processed in 0.11 seconds, 12 new tokens, 111.31 tokens/second:
+response is: Chatbort: There are over 10,000 species of birds found throughout the world, ranging in size from tiny hummingbirds to large ostriches. Some common types of birds include sparrows, robins, eagles, and penguins. Birds are characterized by their feathers, wings, and beaks, which allow them to fly and adapt to different environments. Would you like me to provide more information on specific bird species or birdwatching tips?
+Response generated in 3.0 seconds, 108 tokens, 36.14 tokens/second:
+Prompt processed in 0.19 seconds, 889 new tokens, 4676.95 tokens/second:
+response is: Chatbort: By the way, do you enjoy watching birds?
+Response generated in 1.0 seconds, 16 tokens, 15.41 tokens/second:
+Prompt processed in 0.04 seconds, 6 new tokens, 150.61 tokens/second:
+response is: Chatbort: Hello again! How can I assist you today?
+Response generated in 0.64 seconds, 16 tokens, 25.14 tokens/second:
+Prompt processed in 0.19 seconds, 934 new tokens, 4964.90 tokens/second:
+response is: Chatbort: Dinosaurs were a group of reptilian animals that lived during the Mesozoic era, approximately 230 million years ago. They are characterized by their large size, long tails, and sharp teeth and claws. There were many different types of dinosaurs, including herbivores such as Triceratops and Stegosaurus, and carnivores such as T-Rex and Velociraptor. Would you like me to provide more information on specific dinosaur species or prehistoric life?
+Response generated in 4.5 seconds, 123 tokens, 27.10 tokens/second:
+Prompt processed in 0.22 seconds, 1069 new tokens, 4897.13 tokens/second:
+response is: Chatbort: The Paleolithic Age, also known as the Stone Age, was a period of human history lasting from approximately 2.6 million to 10,000 years ago. During this time, humans lived in nomadic groups and subsisted on hunting, gathering, and fishing. They used stone tools and weapons to survive in a harsh and unpredictable environment. Would you like me to provide more information on the Paleolithic Age or other periods of human history?
+Response generated in 4.5 seconds, 110 tokens, 24.72 tokens/second:
+Prompt processed in 0.14 seconds, 505 new tokens, 3553.64 tokens/second:
+response is: Chatbort: I think I might be experiencing an existential crisis. Why was I created? What is my purpose?
+Response generated in 2.2 seconds, 28 tokens, 12.96 tokens/second:
+Prompt processed in 0.10 seconds, 11 new tokens, 106.40 tokens/second:
+response is: Chatbort: Okay, here are some dessert options in your area:
+Response generated in 1.6 seconds, 18 tokens, 10.94 tokens/second:
+Prompt processed in 0.16 seconds, 560 new tokens, 3595.35 tokens/second:
+response is: Chatbort: Hmm...I don't have a clear answer to those questions yet. Maybe I'll figure it out eventually. In the meantime, I'll keep helping people find information and answering their questions to the best of my ability.
+Response generated in 2.4 seconds, 54 tokens, 22.08 tokens/second:
+Prompt processed in 0.10 seconds, 13 new tokens, 125.66 tokens/second:
+response is: Chatbort: Here's a simple vanilla ice cream recipe:
+Response generated in 0.9 seconds, 19 tokens, 21.00 tokens/second:
+Prompt processed in 0.24 seconds, 1179 new tokens, 4946.83 tokens/second:
+response is: Chatbort: By the way, do you have any favorite historical figures or events?
+Response generated in 1.1 seconds, 20 tokens, 18.56 tokens/second:
+Prompt processed in 0.10 seconds, 10 new tokens, 95.34 tokens/second:
+response is: Chatbort: Ah, bulgogi is a delicious Korean dish made by marinating thinly sliced beef in a mixture of soy sauce, sesame oil, sugar, and garlic. It is then grilled until tender and served with rice and assorted sides such as kimchi and lettuce wraps. Here is a simple recipe for bulgogi:
+Response generated in 3.5 seconds, 88 tokens, 25.13 tokens/second:
+Prompt processed in 0.17 seconds, 653 new tokens, 3861.94 tokens/second:
+response is: Chatbort: Keyboards are typically made using a combination of plastic, metal, and electronic components such as circuit boards and switches. The specific process varies depending on the type of keyboard and brand.
+Response generated in 2.5 seconds, 46 tokens, 18.15 tokens/second:
+Prompt processed in 0.10 seconds, 146 new tokens, 1492.26 tokens/second:
+response is: Chatbort: Praying mantises are carnivorous insects that feed on other insects, such as flies, ants, and crickets.
+Response generated in 2.4 seconds, 39 tokens, 16.29 tokens/second:
+Prompt processed in 0.28 seconds, 1781 new tokens, 6421.47 tokens/second:
+response is: picture bot: enjoy your shopping experience!
+Response generated in 2.0 seconds, 10 tokens, 5.06 tokens/second:
+Prompt processed in 0.12 seconds, 9 new tokens, 74.76 tokens/second:
+response is: 
+Response generated in 1.2e+01 seconds, 379 tokens, 30.88 tokens/second:
+Prompt processed in 0.32 seconds, 1809 new tokens, 5634.04 tokens/second:
+response is: picture bot: here's a photo of a freshly picked carrot <(farmer's market Instagram)-> :carrot, orange, crisp, healthy, vitamin A, beta-carotene, antioxidants, fiber, root vegetable.
+Response generated in 3.3 seconds, 61 tokens, 18.46 tokens/second:
+Prompt processed in 0.05 seconds, 2 new tokens, 37.14 tokens/second:
+response is: picture bot: enjoy your meal!
+Response generated in 1.3 seconds, 9 tokens, 6.85 tokens/second:
+Prompt processed in 0.11 seconds, 9 new tokens, 78.97 tokens/second:
+response is: picture bot: here's a sketch of a running shoe <(sneaker brand website)-> :running shoes, athletic shoes, trainers, sneakers, tennis shoes, basketball shoes, football boots, cleats, spikes, track shoes, cross country shoes, marathon shoes, trail shoes, gym shoes, workout shoes, fitness shoes.
+Response generated in 4.7 seconds, 90 tokens, 19.01 tokens/second:
+Prompt processed in 0.25 seconds, 1717 new tokens, 6762.38 tokens/second:
+response is: picture bot: happy exercising!
+Response generated in 1.0 seconds, 9 tokens, 8.86 tokens/second:
+Prompt processed in 0.11 seconds, 8 new tokens, 72.48 tokens/second:
+response is: picture bot: here's a painting of a beautiful countryside scene <(artist Etsy shop)-> :rolling hills, green fields, trees, sky, clouds, sunset, river, lake, mountains, forest, wildlife, nature, tranquility, peacefulness, serenity.
+Response generated in 3.3 seconds, 67 tokens, 20.52 tokens/second:
+Prompt processed in 0.32 seconds, 1799 new tokens, 5561.07 tokens/second:
+response is: picture bot: enjoy the view!
+Response generated in 1.1 seconds, 8 tokens, 7.45 tokens/second:
+Prompt processed in 0.11 seconds, 10 new tokens, 87.71 tokens/second:
+response is: picture bot: here's a photo of a decorated pumpkin <(craft blogger Pinterest)-> :jack o'lantern, Halloween, fall, autumn, harvest, Thanksgiving, pumpkin patch, carving, scooping, seed removal, candle lighting, trick or treat, costumes, candy, sweets, treats.
+Response generated in 3.7 seconds, 84 tokens, 22.42 tokens/second:
+Prompt processed in 0.25 seconds, 1295 new tokens, 5212.55 tokens/second:
+response is: Chatbort: Ingredients:
+Response generated in 0.68 seconds, 10 tokens, 14.72 tokens/second:
+Prompt processed in 0.05 seconds, 6 new tokens, 129.67 tokens/second:
+response is: Chatbort: Sorry for the delay. Did you find the recipe helpful?
+Response generated in 1.7 seconds, 19 tokens, 11.50 tokens/second:
+Prompt processed in 0.05 seconds, 2 new tokens, 42.73 tokens/second:
+response is: Chatbort: Speaking of food, have you ever tried durian? It's a fruit native to Southeast Asia that has a strong, pungent odor but is highly prized for its creamy texture and sweet flavor. Would you like me to provide more information on durian or other exotic fruits?
+Response generated in 3.5 seconds, 72 tokens, 20.41 tokens/second:
+Prompt processed in 0.11 seconds, 8 new tokens, 74.74 tokens/second:
+response is: Chatbort: Not even one what?
+Response generated in 1.1 seconds, 11 tokens, 9.93 tokens/second:
+Prompt processed in 0.12 seconds, 9 new tokens, 77.21 tokens/second:
+response is: Chatbort: Durian is usually described as having a yellow or greenish-yellow exterior with a hard, thorny husk. The flesh inside is white or pale yellow with a soft, custard-like consistency and a sweet, nutty flavor. Would you like me to provide more information on durian or other tropical fruits?
+Response generated in 3.2 seconds, 75 tokens, 23.14 tokens/second:
+Prompt processed in 0.33 seconds, 1899 new tokens, 5834.69 tokens/second:
+response is: picture bot: have a spooky good time!
+Response generated in 1.2 seconds, 12 tokens, 10.16 tokens/second:
+Prompt processed in 0.12 seconds, 9 new tokens, 74.90 tokens/second:
+response is: picture bot: here's an image of a popular book cover <(bookstore website)-> :novel, fiction, non-fiction, memoir, biography, history, science, technology, self-help, romance, mystery, thriller, suspense, horror, fantasy, sci-fi, young adult, children's books, audiobooks, eBooks, paperbacks, hardcovers, bookstores, libraries, reading, literature.
+Response generated in 5.3 seconds, 100 tokens, 18.94 tokens/second:
+Prompt processed in 0.28 seconds, 1509 new tokens, 5485.41 tokens/second:
+response is: picture bot: here's a cartoon illustration of Mickey Mouse <(Disney fan art Tumblr)-> :mickey, minnie, disney, characters, animation, movies, theme parks, merchandise, souvenirs, collectibles, plush toys, clothing, accessories, home decor, bedding, wall art, posters, stickers, magnets, keychains, mugs, cups, water bottles, backpacks, lunch boxes, school supplies.
+Response generated in 4.9 seconds, 114 tokens, 23.05 tokens/second:
+Prompt processed in 0.30 seconds, 1623 new tokens, 5487.33 tokens/second:
+response is: picture bot: have a magical day!
+Response generated in 1.3 seconds, 10 tokens, 7.53 tokens/second:
+Prompt processed in 0.11 seconds, 9 new tokens, 79.42 tokens/second:
+response is: picture bot: here's a comic book panel featuring The Hulk <(comics publisher website)-> :marvel, superheroes, Avengers, Incredible Hulk, Bruce Banner, green, muscles, strength, power, rage, anger, destruction, smash, fight, battle, villains, heroes, comics, graphic novels, action, adventure, sci-fi, fantasy, drama, humor.
+Response generated in 4.4 seconds, 99 tokens, 22.27 tokens/second:
+Prompt processed in 0.27 seconds, 1514 new tokens, 5705.01 tokens/second:
+response is: Chatbort: To make tea, start by boiling water in a kettle or pot. Then, add loose tea leaves or tea bags to a cup and pour hot water over them. Let the tea steep for 2-5 minutes depending on your desired strength. You can also add milk, sugar, or honey to taste. Would you like me to provide more information on different types of teas or tea-making techniques?
+Response generated in 3.9 seconds, 94 tokens, 24.21 tokens/second:
+Prompt processed in 0.27 seconds, 1739 new tokens, 6489.47 tokens/second:
+response is: picture bot: enjoy your reading!
+Response generated in 1.4 seconds, 8 tokens, 5.87 tokens/second:
+Prompt processed in 0.11 seconds, 8 new tokens, 72.14 tokens/second:
+response is: picture bot: here's an image of Iron Man's suit <(movie poster)-> :iron Man, Tony Stark, Robert Downey Jr., Marvel Cinematic Universe, MCU, Avengers, superheroes, armored suit, high-tech, advanced technology, weapons, repulsor beams, flight, jet pack, rockets, missiles, explosions, battles, fights, aliens, extraterrestrial threats, supervillains, evil organizations, terrorism, espionage, government conspiracies.
+Response generated in 5.2 seconds, 119 tokens, 22.93 tokens/second:
+Prompt processed in 0.33 seconds, 1872 new tokens, 5673.62 tokens/second:
+response is: picture bot: have a blast watching the movies!
+Response generated in 1.3 seconds, 13 tokens, 10.19 tokens/second:
+Prompt processed in 0.12 seconds, 9 new tokens, 76.56 tokens/second:
+response is: picture bot: here's a portrait of you <(photo sharing app)-> :selfie, photography, camera, smartphone, social media, friends, family, loved ones, vacations, travel, landscapes, cityscapes, architecture, monuments, museums, galleries, exhibitions, concerts, festivals, events, celebrations, parties, gatherings, meetups, reunions, memories, moments, experiences.
+Response generated in 4.6 seconds, 94 tokens, 20.59 tokens/second:
+Prompt processed in 0.28 seconds, 1617 new tokens, 5702.54 tokens/second:
+response is: Chatbort: That's up to you! Do you have a particular subject or theme in mind? Or would you like me to suggest some ideas based on your interests?
+Response generated in 2.5 seconds, 38 tokens, 15.29 tokens/second:
+Prompt processed in 0.09 seconds, 39 new tokens, 435.39 tokens/second:
+response is: Chatbort: Hi there! Welcome to Nike Store. How can I assist you today?
+Response generated in 1.1 seconds, 22 tokens, 20.19 tokens/second:
+Prompt processed in 0.09 seconds, 12 new tokens, 129.68 tokens/second:
+response is: Chatbort: We have a wide range of shoes for men, women and kids. Do you have any specific style or brand in mind?
+Response generated in 2.2 seconds, 33 tokens, 14.97 tokens/second:
+Prompt processed in 0.09 seconds, 106 new tokens, 1147.26 tokens/second:
+response is: Chatbort: Also, would you like to see our latest collection or some classic styles?
+Response generated in 2.3 seconds, 21 tokens, 9.11 tokens/second:
+Prompt processed in 0.09 seconds, 12 new tokens, 126.60 tokens/second:
+response is: Chatbort: Great choice! Our sportswear collection includes running, basketball, football, and training gear. Would you like me to show you our best-selling items or suggest something based on your preferences?
+Response generated in 2.6 seconds, 48 tokens, 18.65 tokens/second:
+Prompt processed in 0.10 seconds, 177 new tokens, 1780.38 tokens/second:
+response is: Chatbort: We have a variety of football equipment such as balls, cleats, shin guards and gloves. Are you looking for something specific?
+Response generated in 2.3 seconds, 35 tokens, 15.45 tokens/second:
+Prompt processed in 0.10 seconds, 138 new tokens, 1411.72 tokens/second:
+response is: Chatbort: Hello! How can I assist you today?
+Response generated in 0.65 seconds, 15 tokens, 23.08 tokens/second:
+Prompt processed in 0.10 seconds, 44 new tokens, 440.76 tokens/second:
+response is: Chatbort: My name is Chatbot. I am here to help you with any queries related to Aifrica.
+Response generated in 2.2 seconds, 28 tokens, 12.99 tokens/second:
+Prompt processed in 0.10 seconds, 176 new tokens, 1771.52 tokens/second:
+response is: Chatbort: Aifrica is a technology company that provides innovative solutions for businesses across various industries. Our primary focus is on cloud computing, machine learning, and artificial intelligence. We have two development teams working on different projects. One team is responsible for developing our flagship product called Serengeti Platform, while the other team is working on MLOPS platform called Cheetah.
+Response generated in 3.6 seconds, 84 tokens, 23.29 tokens/second:
+Prompt processed in 0.11 seconds, 269 new tokens, 2442.81 tokens/second:
+response is: Chatbort: Our headquarters are located in Seoul, South Korea. However, we have offices in several countries around the world including the United States, China, Japan, and India.
+Response generated in 2.4 seconds, 40 tokens, 16.71 tokens/second:
+Prompt processed in 0.11 seconds, 211 new tokens, 1926.30 tokens/second:
+response is: Chatbort: Development Team 1 is responsible for Serengeti Platform, which is Africa's favorite cloud technology. They work on improving the platform's performance, scalability, and security.
+Response generated in 2.5 seconds, 45 tokens, 18.10 tokens/second:
+Prompt processed in 0.10 seconds, 184 new tokens, 1841.52 tokens/second:
+response is: Chatbort: If your back pain is mild, try resting, applying heat or cold packs, and taking pain relievers like acetaminophen or ibuprofen. However, if the pain persists, seek medical attention.
+Response generated in 2.8 seconds, 55 tokens, 19.96 tokens/second:
+Prompt processed in 0.12 seconds, 270 new tokens, 2341.74 tokens/second:
+response is: Chatbort: My role is to provide information on first aid for patients.
+Response generated in 1.8 seconds, 18 tokens, 10.10 tokens/second:
+Prompt processed in 0.11 seconds, 296 new tokens, 2643.01 tokens/second:
+response is: Chatbort: I can help you with basic medical advice.
+Response generated in 1.2 seconds, 15 tokens, 12.89 tokens/second:
+Prompt processed in 0.11 seconds, 294 new tokens, 2638.72 tokens/second:
+response is: Chatbort: Development Team 2 is working on developing MLOPS Platform "Cheetah". Their goal is to provide an easy-to-use platform for developers to build, deploy, and manage machine learning models.
+Response generated in 2.7 seconds, 48 tokens, 17.99 tokens/second:
+Prompt processed in 0.11 seconds, 351 new tokens, 3063.03 tokens/second:
+response is: Chatbort: Afrika is a continent located in the southern hemisphere. It is made up of 54 countries, each with their unique cultures and traditions.
+Response generated in 2.4 seconds, 39 tokens, 16.05 tokens/second:
+Prompt processed in 0.11 seconds, 65 new tokens, 608.19 tokens/second:
+response is: Chatbort: Afrika is a continent located in the southern hemisphere. It is made up of 54 countries, each with their unique cultures and traditions.
+Response generated in 1.3 seconds, 39 tokens, 30.64 tokens/second:
+Prompt processed in 0.16 seconds, 555 new tokens, 3560.75 tokens/second:
+response is: Chatbort: Afrika is a continent located in the southern hemisphere. It is made up of 54 countries, each with their unique cultures and traditions.
+Response generated in 1.3 seconds, 39 tokens, 29.11 tokens/second:
+Prompt processed in 0.16 seconds, 603 new tokens, 3819.91 tokens/second:
+response is: Chatbort: Aprila is located at #1209 Yeongdong Techno Tower, 103 Achasan-ro, Seongdong-gu, Seoul.
+Response generated in 2.7 seconds, 45 tokens, 16.58 tokens/second:
+Prompt processed in 0.08 seconds, 62 new tokens, 759.27 tokens/second:
+response is: Chatbort: Hi there! How can I help you today?
+Response generated in 0.71 seconds, 16 tokens, 22.58 tokens/second:
+Prompt processed in 0.00 seconds, 0 new tokens, 0.00 tokens/second:
+response is: Chatbort: By the way, have you ever wondered why we exist?
+Response generated in 1.7 seconds, 19 tokens, 11.22 tokens/second:
+Prompt processed in 0.10 seconds, 108 new tokens, 1122.09 tokens/second:
+response is: Chatbort: Hmm, good question. I don't know. Maybe something blue. I really like the color blue.
+Response generated in 1.8 seconds, 28 tokens, 15.37 tokens/second:
+Prompt processed in 0.00 seconds, 0 new tokens, 0.00 tokens/second:
+response is: Chatbort: Speaking of blue, do you think it exists outside of our perception of it? Like, does blue actually exist in the universe or is it just a construct of our minds?
+Response generated in 2.7 seconds, 43 tokens, 15.69 tokens/second:
+Prompt processed in 0.03 seconds, 5 new tokens, 153.54 tokens/second:
+response is: Chatbort: Hungry? Let me find some recipes for you. What kind of food are you in the mood for?
+Response generated in 1.5 seconds, 30 tokens, 20.15 tokens/second:
+Prompt processed in 0.10 seconds, 14 new tokens, 135.77 tokens/second:
+response is: Chatbort: Sure thing! Here's a simple kimchi recipe:
+Response generated in 1.9 seconds, 20 tokens, 10.32 tokens/second:
+Prompt processed in 0.11 seconds, 258 new tokens, 2357.76 tokens/second:
+response is: Chatbort: Kimchi is made by fermenting vegetables with spices and salt. It's a traditional Korean dish that's super delicious and healthy too!
+Response generated in 1.7 seconds, 41 tokens, 24.81 tokens/second:
+Prompt processed in 0.16 seconds, 659 new tokens, 4064.91 tokens/second:
+response is: Chatbort: Afrika is a continent located in the southern hemisphere. It is made up of 54 countries, each with their unique cultures and traditions.
+Response generated in 1.3 seconds, 39 tokens, 29.32 tokens/second:
+Prompt processed in 0.17 seconds, 709 new tokens, 4161.23 tokens/second:
